@@ -2,7 +2,10 @@
   font-family: "Poppins";
   src: url("../fonts/poppins/Poppins-Regular.ttf"); }
 #main {
-  width: 1400px;
+  width: 100%;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
   background-image: url("../img/bg.png");
   min-height: 1364px;
   overflow: auto; }
@@ -62,7 +65,7 @@
 
 .posts {
   margin-left: 385px;
-  width: 959px; }
+  margin-right: 50px; }
 
 .posts__head {
   text-align: left;
@@ -140,5 +143,11 @@
 
 .focused-text {
   color: #FE8700; }
+
+@media screen and (max-width: 1420px) {
+  .slider-block {
+    width: 939px;
+    margin-left: auto;
+    margin-right: auto; } }
 
 /*# sourceMappingURL=style.css.map */
