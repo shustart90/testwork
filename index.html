@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Slider</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="main">
+        <section class="text-block">
+            <h1 class="head text-block__head">Наши топ-блогеры</h1>
+            <p class="par text-block__par">Лучше специалисты в своем деле,<br>
+                средний опыт работы в профессии - 27 лет</p>
+        </section>
+        <div class="buttons-block">
+                <div class="buttons-block__button buttons-block__button_l" @click="prevCard"></div>
+                <div class="buttons-block__button buttons-block__button_r" @click="nextCard"></div>
+        </div>
+        <section class="slider-block">
+            <div class="slider slider-block__slider" :style="{left: offset + 'px'}">
+                <div  :id="'user-'+ card.id" v-for='(card, index) in cardsList' class="card slider__card" >
+                    <img class="slider__photo" :src="imageAdress + (card.id - 1)" alt="" @click="clickEffect" :class="{ 'card_focused': index === 0 }">
+                    <p class="slider__name" @click="clickEffect" :class="{ 'focused-text': index === 0 }">{{card.name}}</p>
+                    <p class="slider__company" @click="clickEffect" :class="{ 'focused-text': index === 0 }">{{card.company.name}}</p>
+                </div>
+            </div>
+        </section>
+        <section class="posts">
+            <h2 class="head posts__head">3 актуальных поста <span class="focused-text">{{currentUser.name}}</span></h2>
+            <div class="post-item posts__post-item">
+                <h3 class="post-item__head">{{currentTextBlock[0].title}}</h3>
+                <p class="post-item__par">{{currentTextBlock[0].body}}</p>
+            </div>
+            <div class="post posts__post posts__post-item">
+                <h3 class="post-item__head">{{currentTextBlock[1].title}}</h3>
+                <p class="post-item__par">{{currentTextBlock[1].body}}</p>
+            </div>
+            <div class="post posts__post posts__post-item">
+                <h3 class="post-item__head">{{currentTextBlock[2].title}}</h3>
+                <p class="post-item__par">{{currentTextBlock[2].body}}</p>
+            </div>
+        </section>
+    </div>
+<script src="vue.js"></script>
+<script async src="slider.js"></script>
+</body>
+</html>

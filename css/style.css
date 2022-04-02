@@ -1,0 +1,144 @@
+@font-face {
+  font-family: "Poppins";
+  src: url("../fonts/poppins/Poppins-Regular.ttf"); }
+#main {
+  width: 1400px;
+  background-image: url("../img/bg.png");
+  min-height: 1364px;
+  overflow: auto; }
+
+.text-block {
+  overflow: auto; }
+
+.head {
+  font-family: Poppins, monospace;
+  font-weight: 600;
+  font-size: 55px;
+  letter-spacing: 1px;
+  line-height: 20px;
+  color: #384758;
+  text-align: center; }
+
+.text-block__head {
+  margin-top: 62px; }
+
+.par {
+  width: 432px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-family: Poppins, monospace;
+  font-weight: 400;
+  font-size: 20px;
+  color: #606F81; }
+
+.buttons-block {
+  width: 115px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 14px; }
+
+.buttons-block__button {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: #FE8700;
+  text-align: center;
+  cursor: pointer; }
+
+.buttons-block__button_l::after {
+  content: url("../img/arrow-l.png");
+  line-height: 59px; }
+
+.buttons-block__button_r::after {
+  content: url("../img/arrow-r.png");
+  line-height: 59px; }
+
+.posts {
+  margin-left: 385px;
+  width: 959px; }
+
+.posts__head {
+  text-align: left;
+  line-height: 61px;
+  min-height: 122px; }
+
+.post-item__head {
+  font-family: Poppins, monospace;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 28px;
+  text-align: left; }
+
+.post-item__par {
+  font-family: Poppins, monospace;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px;
+  text-align: left;
+  color: #606F81; }
+
+.slider-block {
+  min-height: 418px;
+  margin-top: 22px;
+  position: relative;
+  overflow: hidden;
+  margin-left: 61px;
+  margin-right: 76px; }
+
+.slider {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  overflow: hidden;
+  position: absolute;
+  -webkit-transition: 0.8s;
+  transition: 0.8s; }
+
+.card {
+  margin-right: 34px; }
+
+.slider__photo {
+  border-bottom: 4px solid transparent;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  cursor: pointer; }
+
+.card_focused {
+  border-bottom: 4px solid #FE8700; }
+
+.slider__name {
+  font-family: Poppins, monospace;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 36px;
+  text-align: left;
+  color: #384758;
+  cursor: pointer; }
+
+.slider__company {
+  font-family: Poppins, monospace;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 27px;
+  text-align: left;
+  color: #606F81;
+  cursor: pointer; }
+
+.focused-text {
+  color: #FE8700; }
+
+/*# sourceMappingURL=style.css.map */
