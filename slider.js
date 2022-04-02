@@ -1,30 +1,30 @@
 const app = new Vue({
     el: '#main',
     data: {
-        cardsList: [],
-        quotesList: [],
-        cardsCount: 0,
-        trueCounter: 1,
-        offset: 0,
+        cardsList: [], //массив с разработчиками из json-a
+        quotesList: [], //массив с цитатами из json-a
+        cardsCount: 0, // колличество разработчиков в массиве
+        trueCounter: 1, // переменная-счетчик для контроля сдвига слайдера если она больше или меньше определенного значения слайдер перестает двигаться
+        offset: 0, // отступ для блока со слайдером
         imageAdress: "https://i.pravatar.cc/290?img=3",
         currentUser: "",
-        currentTextBlock: [],
-        firstUser: ""
+        currentTextBlock: "",
+        firstUser: "" //первый активный разработчик
     },
     methods: {
-        nextCard () {
+        nextCard () { // следующая карточка с разработчиком
             if (this.trueCounter < this.cardsCount - 3) {
                 this.offset -= 324
                 this.trueCounter += 1
             }
         },
-        prevCard () {
+        prevCard () { // предидущая карточка с разработчиком
             if (this.trueCounter > 1) {
                 this.offset += 324
                 this.trueCounter -= 1
             }
         },
-        clickEffect (event) {
+        clickEffect (event) { // выделение карточки с разработчиком
             let el = event.target;
             let parentEl = el.parentNode;
             let parentElId = parentEl.id.split("-")[1];
@@ -51,10 +51,10 @@ const app = new Vue({
                     this.currentUser = this.cardsList[i];
                 }
             }
-            this.currentTextBlock = [];
+
             for (let i =0; i < this.quotesList.length; i++) {
                 if (this.quotesList[i]["userId"] == parentElId) {
-                    this.currentTextBlock.push(this.quotesList[i]);
+                    this.currentTextBlock = this.quotesList[i];
                 }
             }
         }
@@ -73,7 +73,7 @@ const app = new Vue({
                 this.quotesList = [...el];
                 for (let i =0; i < this.quotesList.length; i++) {
                     if (this.quotesList[i]["userId"] == 1) {
-                        this.currentTextBlock.push(this.quotesList[i]);
+                        this.currentTextBlock = this.quotesList[i];
                     }
                 }
             });
