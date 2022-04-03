@@ -12,36 +12,12 @@
             <p class="par text-block__par">Лучше специалисты в своем деле,<br>
                 средний опыт работы в профессии - 27 лет</p>
         </section>
-        <section class="slider-block">
-            <div class="buttons-block slider-block__buttons-block">
-                <div class="buttons-block__button buttons-block__button_l" @click="prevCard"></div>
-                <div class="buttons-block__button buttons-block__button_r" @click="nextCard"></div>
-            </div>
-            <div class="slider slider-block__slider" :style="{left: offset + 'px'}">
-                <div  :id="'user-'+ card.id" v-for='(card, index) in cardsList' class="card slider__card" >
-                    <img class="slider__photo" :src="imageAdress + (card.id - 1)" alt="" @click="clickEffect" :class="{ 'card_focused': index === 0 }">
-                    <p class="slider__name" @click="clickEffect" :class="{ 'focused-text': index === 0 }">{{card.name}}</p>
-                    <p class="slider__company" @click="clickEffect" :class="{ 'focused-text': index === 0 }">{{card.company.name}}</p>
-                </div>
-            </div>
-        </section>
-        <section class="posts">
-            <h2 class="head posts__head">3 актуальных поста <span class="focused-text">{{currentUser.name}}</span></h2>
-            <div class="post-item posts__post-item">
-                <h3 class="post-item__head">{{currentTextBlock.title}}</h3>
-                <p class="post-item__par">{{currentTextBlock.body}}</p>
-            </div>
-            <div class="post posts__post posts__post-item">
-                <h3 class="post-item__head">{{currentTextBlock.title}}</h3>
-                <p class="post-item__par">{{currentTextBlock.body}}</p>
-            </div>
-            <div class="post posts__post posts__post-item">
-                <h3 class="post-item__head">{{currentTextBlock.title}}</h3>
-                <p class="post-item__par">{{currentTextBlock.body}}</p>
-            </div>
-        </section>
+        <slider></slider>
+        <posts></posts>
     </div>
 <script src="vue.js"></script>
-<script async src="slider.js"></script>
+<script src="slider-component.js"></script>
+<script src="posts-component.js"></script>
+<script async src="main.js"></script>
 </body>
 </html>
