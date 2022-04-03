@@ -12,11 +12,11 @@
             <p class="par text-block__par">Лучше специалисты в своем деле,<br>
                 средний опыт работы в профессии - 27 лет</p>
         </section>
-        <div class="buttons-block">
+        <section class="slider-block">
+            <div class="buttons-block slider-block__buttons-block">
                 <div class="buttons-block__button buttons-block__button_l" @click="prevCard"></div>
                 <div class="buttons-block__button buttons-block__button_r" @click="nextCard"></div>
-        </div>
-        <section class="slider-block">
+            </div>
             <div class="slider slider-block__slider" :style="{left: offset + 'px'}">
                 <div  :id="'user-'+ card.id" v-for='(card, index) in cardsList' class="card slider__card" >
                     <img class="slider__photo" :src="imageAdress + (card.id - 1)" alt="" @click="clickEffect" :class="{ 'card_focused': index === 0 }">

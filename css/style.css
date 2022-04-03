@@ -42,10 +42,12 @@
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
-          justify-content: space-between;
+          justify-content: space-between; }
+
+.slider-block__buttons-block {
   margin-left: auto;
   margin-right: auto;
-  margin-top: 14px; }
+  margin-top: 19px; }
 
 .buttons-block__button {
   width: 48px;
@@ -63,36 +65,9 @@
   content: url("../img/arrow-r.png");
   line-height: 59px; }
 
-.posts {
-  margin-left: 385px;
-  margin-right: 50px; }
-
-.posts__head {
-  text-align: left;
-  line-height: 61px;
-  min-height: 122px; }
-
-.post-item__head {
-  font-family: Poppins, monospace;
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 28px;
-  text-align: left;
-  margin-top: 60px; }
-
-.post-item__par {
-  font-family: Poppins, monospace;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 28px;
-  text-align: left;
-  color: #606F81; }
-
 .slider-block {
-  min-height: 418px;
-  margin-top: 22px;
+  min-height: 490px;
+  margin-top: 0;
   position: relative;
   overflow: hidden;
   margin-left: 61px;
@@ -109,6 +84,9 @@
   position: absolute;
   -webkit-transition: 0.8s;
   transition: 0.8s; }
+
+.slider-block__slider {
+  margin-top: 18px; }
 
 .card {
   margin-right: 34px; }
@@ -144,6 +122,35 @@
 
 .focused-text {
   color: #FE8700; }
+
+.posts {
+  margin-left: 385px;
+  margin-right: 50px; }
+
+.posts__head {
+  text-align: left;
+  line-height: 61px;
+  min-height: 122px;
+  margin-top: 34px;
+  font-size: 52px; }
+
+.post-item__head {
+  font-family: Poppins, monospace;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 28px;
+  text-align: left;
+  margin-top: 60px; }
+
+.post-item__par {
+  font-family: Poppins, monospace;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px;
+  text-align: left;
+  color: #606F81; }
 
 @media screen and (min-width: 991px) and (max-width: 1420px) {
   .slider-block {

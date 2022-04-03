@@ -26,10 +26,10 @@ const app = new Vue({
         },
         clickEffect (event) { // выделение карточки с разработчиком
             let el = event.target;
-            let parentEl = el.parentNode;
+            let parentEl = el.parentNode; // функция обработчик нажатия присвоена дочерним элементам карточки поэтому нужно найти родителя
             let parentElId = parentEl.id.split("-")[1];
             let childrenElems = parentEl.childNodes
-            let usersPhoto = document.getElementsByClassName("slider__photo")
+            let usersPhoto = document.getElementsByClassName("slider__photo") //удаления уже имеющегося выделения прошлой карточки для выделения новый при нажатии
             for (let i = 0; i < usersPhoto.length; i++) {
                 if(usersPhoto[i].classList.contains("card_focused")){
                     usersPhoto[i].classList.remove("card_focused");
@@ -44,11 +44,11 @@ const app = new Vue({
                 }
             }
             parentEl.firstChild.classList.add("card_focused");
-            childrenElems[2].classList.add("focused-text");
-            childrenElems[4].classList.add("focused-text");
+            childrenElems[2].classList.add("focused-text"); //заголовок цитаты
+            childrenElems[4].classList.add("focused-text"); //текст цитаты
             for (let i = 0; i < this.cardsList.length; i++) {
                 if(this.cardsList[i]["id"] == parentElId) {
-                    this.currentUser = this.cardsList[i];
+                    this.currentUser = this.cardsList[i]; //находим разработчика для оранжевого имени в заголовке цитат
                 }
             }
 
@@ -65,7 +65,7 @@ const app = new Vue({
             .then(el => {
                 this.cardsList = [...el];
                 this.cardsCount = this.cardsList.length;
-                this.currentUser = this.cardsList[0];
+                this.currentUser = this.cardsList[0]; //первый разработчик выделенный на странице при ее загрузке
             });
         fetch("https://jsonplaceholder.typicode.com/posts")
             .then(data => data.json())
@@ -73,7 +73,7 @@ const app = new Vue({
                 this.quotesList = [...el];
                 for (let i =0; i < this.quotesList.length; i++) {
                     if (this.quotesList[i]["userId"] == 1) {
-                        this.currentTextBlock = this.quotesList[i];
+                        this.currentTextBlock = this.quotesList[i]; //первый текстовый блок на странице при ее загрузке
                     }
                 }
             });
